@@ -50,3 +50,7 @@ variable "protocol" {
     type = string
     default = "-1"
 }
+
+variable "environment" {
+    default = "qa"
+}
