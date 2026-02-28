@@ -4,21 +4,21 @@ provider "aws" {
 
 resource "aws_instance" "terraform" {
     ami = var.ami_id
-    count = 4
+    #count = 4
 
     #count = length(var.instances)
 
-    #for_each = var.instances
+    for_each = var.instances
     #for_each = toset(var.instances)
-    #instance_type = each.value
+    instance_type = each.value
 
-    instance_type = var.instance_type
+    #instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.allow_all.id]
     tags = {
-        Name = var.instances[count.index]
+        #Name = var.instances[count.index]
         
         #Name = each.value
-        #Name = each.key
+        Name = each.key
         
         Terraform = "true"
         Project = "roboshop"
