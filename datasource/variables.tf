@@ -54,3 +54,15 @@ variable "protocol" {
 variable "environment" {
     default = "qa"
 }
+
+variable "instances" {
+    default = [ "mongodb", "redis", "mysql", "rabbitmq" ]
+}
+
+variable "zone_id" {
+    default = "Z07554052DKE460EXL8MZ"
+}
+
+variable "domain_name" {
+    default = "devops26.online"
+}
